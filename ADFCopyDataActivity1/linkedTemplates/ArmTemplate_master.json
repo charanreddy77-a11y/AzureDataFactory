@@ -1,0 +1,258 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFCopyDataActivity1"
+		},
+		"LS_CSV_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_CSV'"
+		},
+		"LS_CSV1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV1'"
+		},
+		"LS_CSV2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_CSV2'"
+		},
+		"LS_GETMETADATA_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_GETMETADATA'"
+		},
+		"LS_INCOMING_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_INCOMING'"
+		},
+		"LS_MULTIPLECSV_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_MULTIPLECSV'"
+		},
+		"LS_MULTIPLECSV_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_MULTIPLECSV_OUTPUT'"
+		},
+		"LS_SIC_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SIC'"
+		},
+		"LS_SOURCE_BLOB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SOURCE_BLOB'"
+		},
+		"LS_TARGET_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_TARGET_ADLS'"
+		},
+		"LS_TXT_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_TXT'"
+		},
+		"LS_adlsdevproject_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adlsdevproject'"
+		},
+		"LS_blobdevproject_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_blobdevproject'"
+		},
+		"LS_csvinput_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_csvinput'"
+		},
+		"LS_csvmultiple_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_csvmultiple'"
+		},
+		"LS_insideforeach_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_insideforeach'"
+		},
+		"LS_metadata_foreach_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_metadata_foreach'"
+		},
+		"LS_multiplecsvinput_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_multiplecsvinput'"
+		},
+		"LS_multiplecsvoutput_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_multiplecsvoutput'"
+		},
+		"LS_multiplecsvparquet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_multiplecsvparquet'"
+		},
+		"LS_parquetoutput_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_parquetoutput'"
+		},
+		"LS_CSV1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_TARGET_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_adlsdevproject_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_multiplecsvoutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_multiplecsvparquet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_parquetoutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADFCopyDataActivity1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_CSV_connectionString": {
+						"value": "[parameters('LS_CSV_connectionString')]"
+					},
+					"LS_CSV1_accountKey": {
+						"value": "[parameters('LS_CSV1_accountKey')]"
+					},
+					"LS_CSV2_connectionString": {
+						"value": "[parameters('LS_CSV2_connectionString')]"
+					},
+					"LS_GETMETADATA_connectionString": {
+						"value": "[parameters('LS_GETMETADATA_connectionString')]"
+					},
+					"LS_INCOMING_connectionString": {
+						"value": "[parameters('LS_INCOMING_connectionString')]"
+					},
+					"LS_MULTIPLECSV_connectionString": {
+						"value": "[parameters('LS_MULTIPLECSV_connectionString')]"
+					},
+					"LS_MULTIPLECSV_OUTPUT_accountKey": {
+						"value": "[parameters('LS_MULTIPLECSV_OUTPUT_accountKey')]"
+					},
+					"LS_SIC_connectionString": {
+						"value": "[parameters('LS_SIC_connectionString')]"
+					},
+					"LS_SOURCE_BLOB_connectionString": {
+						"value": "[parameters('LS_SOURCE_BLOB_connectionString')]"
+					},
+					"LS_TARGET_ADLS_accountKey": {
+						"value": "[parameters('LS_TARGET_ADLS_accountKey')]"
+					},
+					"LS_TXT_connectionString": {
+						"value": "[parameters('LS_TXT_connectionString')]"
+					},
+					"LS_adlsdevproject_accountKey": {
+						"value": "[parameters('LS_adlsdevproject_accountKey')]"
+					},
+					"LS_blobdevproject_connectionString": {
+						"value": "[parameters('LS_blobdevproject_connectionString')]"
+					},
+					"LS_csvinput_connectionString": {
+						"value": "[parameters('LS_csvinput_connectionString')]"
+					},
+					"LS_csvmultiple_connectionString": {
+						"value": "[parameters('LS_csvmultiple_connectionString')]"
+					},
+					"LS_insideforeach_connectionString": {
+						"value": "[parameters('LS_insideforeach_connectionString')]"
+					},
+					"LS_metadata_foreach_connectionString": {
+						"value": "[parameters('LS_metadata_foreach_connectionString')]"
+					},
+					"LS_multiplecsvinput_connectionString": {
+						"value": "[parameters('LS_multiplecsvinput_connectionString')]"
+					},
+					"LS_multiplecsvoutput_accountKey": {
+						"value": "[parameters('LS_multiplecsvoutput_accountKey')]"
+					},
+					"LS_multiplecsvparquet_accountKey": {
+						"value": "[parameters('LS_multiplecsvparquet_accountKey')]"
+					},
+					"LS_CSV1_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV1_properties_typeProperties_url')]"
+					},
+					"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_TARGET_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_TARGET_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_adlsdevproject_properties_typeProperties_url": {
+						"value": "[parameters('LS_adlsdevproject_properties_typeProperties_url')]"
+					},
+					"LS_multiplecsvoutput_properties_typeProperties_url": {
+						"value": "[parameters('LS_multiplecsvoutput_properties_typeProperties_url')]"
+					},
+					"LS_multiplecsvparquet_properties_typeProperties_url": {
+						"value": "[parameters('LS_multiplecsvparquet_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADFCopyDataActivity1_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_parquetoutput_accountKey": {
+						"value": "[parameters('LS_parquetoutput_accountKey')]"
+					},
+					"LS_parquetoutput_properties_typeProperties_url": {
+						"value": "[parameters('LS_parquetoutput_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFCopyDataActivity1_ArmTemplate_0')]"
+			]
+		}
+	]
+}

@@ -1,0 +1,93 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFCopyDataActivity1"
+		},
+		"LS_CSV_connectionString": {
+			"value": ""
+		},
+		"LS_CSV1_accountKey": {
+			"value": ""
+		},
+		"LS_CSV2_connectionString": {
+			"value": ""
+		},
+		"LS_GETMETADATA_connectionString": {
+			"value": ""
+		},
+		"LS_INCOMING_connectionString": {
+			"value": ""
+		},
+		"LS_MULTIPLECSV_connectionString": {
+			"value": ""
+		},
+		"LS_MULTIPLECSV_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_SIC_connectionString": {
+			"value": ""
+		},
+		"LS_SOURCE_BLOB_connectionString": {
+			"value": ""
+		},
+		"LS_TARGET_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_TXT_connectionString": {
+			"value": ""
+		},
+		"LS_adlsdevproject_accountKey": {
+			"value": ""
+		},
+		"LS_blobdevproject_connectionString": {
+			"value": ""
+		},
+		"LS_csvinput_connectionString": {
+			"value": ""
+		},
+		"LS_csvmultiple_connectionString": {
+			"value": ""
+		},
+		"LS_insideforeach_connectionString": {
+			"value": ""
+		},
+		"LS_metadata_foreach_connectionString": {
+			"value": ""
+		},
+		"LS_multiplecsvinput_connectionString": {
+			"value": ""
+		},
+		"LS_multiplecsvoutput_accountKey": {
+			"value": ""
+		},
+		"LS_multiplecsvparquet_accountKey": {
+			"value": ""
+		},
+		"LS_parquetoutput_accountKey": {
+			"value": ""
+		},
+		"LS_CSV1_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_TARGET_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_adlsdevproject_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_multiplecsvoutput_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_multiplecsvparquet_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_parquetoutput_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		}
+	}
+}
