@@ -1,0 +1,42 @@
+{
+	"name": "SqlServerTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLSERVER",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ShiftID",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StartTime",
+				"type": "time",
+				"scale": 7
+			},
+			{
+				"name": "EndTime",
+				"type": "time",
+				"scale": 7
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "HumanResources",
+			"table": "Shift"
+		}
+	}
+}
