@@ -1,0 +1,15 @@
+{
+	"name": "ADFCopyDataActivity1",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ed18254c-0041-49b2-a21a-33377d1d8349",
+		"tenantId": "697ea6fb-760f-4888-b6c4-9a291348617f"
+	}
+}
