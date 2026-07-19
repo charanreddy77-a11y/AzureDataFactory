@@ -28,7 +28,10 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "DimCategory"
+			"table": {
+				"value": "@concat(dataset().SchemaName,'.',dataset().TableName)",
+				"type": "Expression"
+			}
 		}
 	}
 }
