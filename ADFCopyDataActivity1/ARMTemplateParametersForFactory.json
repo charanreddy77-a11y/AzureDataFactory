@@ -32,6 +32,12 @@
 		"LS_SOURCE_BLOB_connectionString": {
 			"value": ""
 		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SQL_SERVER_accountKey": {
+			"value": ""
+		},
 		"LS_TARGET_ADLS_accountKey": {
 			"value": ""
 		},
@@ -68,10 +74,34 @@
 		"LS_parquetoutput_accountKey": {
 			"value": ""
 		},
+		"LS_WATERMARK_password": {
+			"value": ""
+		},
+		"LS_SQL_SOURCE_password": {
+			"value": ""
+		},
+		"LS_SQL_SOURCE1_password": {
+			"value": ""
+		},
+		"LS_OUTPUT_PARQUET_accountKey": {
+			"value": ""
+		},
 		"LS_CSV1_properties_typeProperties_url": {
 			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
 		"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "charan_reddy0603"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_url": {
 			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
 		"LS_TARGET_ADLS_properties_typeProperties_url": {
@@ -87,6 +117,36 @@
 			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
 		"LS_parquetoutput_properties_typeProperties_url": {
+			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_WATERMARK_properties_typeProperties_server": {
+			"value": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_WATERMARK_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_WATERMARK_properties_typeProperties_userName": {
+			"value": "charan_reddy0603"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_server": {
+			"value": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_userName": {
+			"value": "charan_reddy0603"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_server": {
+			"value": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_userName": {
+			"value": "charan_reddy0603"
+		},
+		"LS_OUTPUT_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevproject0001.dfs.core.windows.net/"
 		}
 	}

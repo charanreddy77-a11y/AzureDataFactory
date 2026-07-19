@@ -43,6 +43,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SOURCE_BLOB'"
 		},
+		"LS_SQLSERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER'"
+		},
+		"LS_SQL_SERVER_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_SERVER'"
+		},
 		"LS_TARGET_ADLS_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_TARGET_ADLS'"
@@ -91,11 +99,43 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_parquetoutput'"
 		},
+		"LS_WATERMARK_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_WATERMARK'"
+		},
+		"LS_SQL_SOURCE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_SOURCE'"
+		},
+		"LS_SQL_SOURCE1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_SOURCE1'"
+		},
+		"LS_OUTPUT_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_OUTPUT_PARQUET'"
+		},
 		"LS_CSV1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
 		"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "charan_reddy0603"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
@@ -116,6 +156,46 @@
 			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
 		"LS_parquetoutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
+		},
+		"LS_WATERMARK_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_WATERMARK_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW"
+		},
+		"LS_WATERMARK_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "charan_reddy0603"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW"
+		},
+		"LS_SQL_SOURCE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "charan_reddy0603"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "Charan_Reddy\\SQLEXPRESS"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW"
+		},
+		"LS_SQL_SOURCE1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "charan_reddy0603"
+		},
+		"LS_OUTPUT_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevproject0001.dfs.core.windows.net/"
 		},
@@ -173,6 +253,9 @@
 					"LS_SOURCE_BLOB_connectionString": {
 						"value": "[parameters('LS_SOURCE_BLOB_connectionString')]"
 					},
+					"LS_SQL_SERVER_accountKey": {
+						"value": "[parameters('LS_SQL_SERVER_accountKey')]"
+					},
 					"LS_TARGET_ADLS_accountKey": {
 						"value": "[parameters('LS_TARGET_ADLS_accountKey')]"
 					},
@@ -203,14 +286,14 @@
 					"LS_multiplecsvoutput_accountKey": {
 						"value": "[parameters('LS_multiplecsvoutput_accountKey')]"
 					},
-					"LS_multiplecsvparquet_accountKey": {
-						"value": "[parameters('LS_multiplecsvparquet_accountKey')]"
-					},
 					"LS_CSV1_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV1_properties_typeProperties_url')]"
 					},
 					"LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_MULTIPLECSV_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_SQL_SERVER_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_SERVER_properties_typeProperties_url')]"
 					},
 					"LS_TARGET_ADLS_properties_typeProperties_url": {
 						"value": "[parameters('LS_TARGET_ADLS_properties_typeProperties_url')]"
@@ -220,9 +303,6 @@
 					},
 					"LS_multiplecsvoutput_properties_typeProperties_url": {
 						"value": "[parameters('LS_multiplecsvoutput_properties_typeProperties_url')]"
-					},
-					"LS_multiplecsvparquet_properties_typeProperties_url": {
-						"value": "[parameters('LS_multiplecsvparquet_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -242,16 +322,96 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_multiplecsvparquet_accountKey": {
+						"value": "[parameters('LS_multiplecsvparquet_accountKey')]"
+					},
 					"LS_parquetoutput_accountKey": {
 						"value": "[parameters('LS_parquetoutput_accountKey')]"
 					},
+					"LS_OUTPUT_PARQUET_accountKey": {
+						"value": "[parameters('LS_OUTPUT_PARQUET_accountKey')]"
+					},
+					"LS_SQLSERVER_password": {
+						"value": "[parameters('LS_SQLSERVER_password')]"
+					},
+					"LS_WATERMARK_password": {
+						"value": "[parameters('LS_WATERMARK_password')]"
+					},
+					"LS_SQL_SOURCE_password": {
+						"value": "[parameters('LS_SQL_SOURCE_password')]"
+					},
+					"LS_SQL_SOURCE1_password": {
+						"value": "[parameters('LS_SQL_SOURCE1_password')]"
+					},
+					"LS_multiplecsvparquet_properties_typeProperties_url": {
+						"value": "[parameters('LS_multiplecsvparquet_properties_typeProperties_url')]"
+					},
 					"LS_parquetoutput_properties_typeProperties_url": {
 						"value": "[parameters('LS_parquetoutput_properties_typeProperties_url')]"
+					},
+					"LS_OUTPUT_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_OUTPUT_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]"
+					},
+					"LS_WATERMARK_properties_typeProperties_server": {
+						"value": "[parameters('LS_WATERMARK_properties_typeProperties_server')]"
+					},
+					"LS_WATERMARK_properties_typeProperties_database": {
+						"value": "[parameters('LS_WATERMARK_properties_typeProperties_database')]"
+					},
+					"LS_WATERMARK_properties_typeProperties_userName": {
+						"value": "[parameters('LS_WATERMARK_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_SOURCE_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_SOURCE_properties_typeProperties_server')]"
+					},
+					"LS_SQL_SOURCE_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_SOURCE_properties_typeProperties_database')]"
+					},
+					"LS_SQL_SOURCE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_SOURCE_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_SOURCE1_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_SOURCE1_properties_typeProperties_server')]"
+					},
+					"LS_SQL_SOURCE1_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_SOURCE1_properties_typeProperties_database')]"
+					},
+					"LS_SQL_SOURCE1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_SOURCE1_properties_typeProperties_userName')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADFCopyDataActivity1_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADFCopyDataActivity1_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFCopyDataActivity1_ArmTemplate_1')]"
 			]
 		}
 	]
