@@ -1,0 +1,37 @@
+{
+	"name": "DS_SQL_SOURCE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_SOURCE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"SchemaName": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "CategoryKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CategoryName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@concat(dataset().SchemaName,'.',dataset().TableName)",
+				"type": "Expression"
+			}
+		}
+	}
+}
