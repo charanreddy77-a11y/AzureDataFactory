@@ -1,0 +1,34 @@
+{
+	"name": "DS_SQL_SOURCE1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_SOURCE1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"SchemaName": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "CategoryKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CategoryName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimCategory"
+		}
+	}
+}
